@@ -1,0 +1,25 @@
+version: '3.7'
+networks:
+  web:
+    external: true
+
+services:
+  web:
+    container_name: "project_web"
+    image:  nginx:alpine
+    volumes:
+      - ./website:/usr/share/nginx/html
+    restart: unless-stopped
+    networks:
+      - web
+    labels:
+      ## Routers
+      - "traefik.enable=true"
+      - "traefik.http.routers.projectweb.rule=Host(`project.raulheredia.es`)" 
+      - "traefik.http.routers.projectweb.service=projectweb"
+      - "traefik.http.routers.projectweb.entrypoints=websecure"
+      ## TLS
+      - "traefik.http.routers.projectweb.tls=true"
+      - "traefik.http.routers.projectweb.tls.certresolver=lets-encrypt"
+      ## Loadbalancer
+      - "traefik.http.services.projectweb.loadbalancer.server.port=80"
