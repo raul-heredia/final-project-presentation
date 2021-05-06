@@ -1,0 +1,10 @@
+.first-yaml, .second-yaml{
+    font-weight: 800;
+    font-size: 16px;
+}
+.first-yaml{
+    color: red;
+}
+.second-yaml{
+    color: green;
+}
