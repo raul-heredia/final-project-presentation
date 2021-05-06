@@ -3539,8 +3539,8 @@ LOGOS
 /* --- Images (black logo/image) --- */
 img.blacklogo {
   background: none;
-  -webkit-filter: grayscale(100%) brightness(10%) contrast(100%);
-          filter: grayscale(100%) brightness(10%) contrast(100%); }
+  -webkit-filter: grayscale(100%) brightness(30%) contrast(100%);
+          filter: grayscale(100%) brightness(30%) contrast(100%); }
 
 /* --- Images (gray logo/image) --- */
 img.graylogo {
