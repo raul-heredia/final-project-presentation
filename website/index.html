@@ -88,70 +88,170 @@
           - Vertical sliding = <article id="webslides" class="vertical">
           - <div class="wrap"> = container 90% / <div class="wrap size-50"> = 45%;
         -->
-
-      <section class="slide-top bg-gradient-v">
-        <div class="wrap">
-          <div class="content-center">
-            <h3>
-              <strong>Desplegament de Wordpress amb Docker-Compose i Kubernetes</strong>
-            </h3>
-            <p class="text-intro"><strong>
-                Raúl Heredia<br />
-                ASIX 2 Curs 2020-21
-            </p>
-            </strong>
-          </div>
+      <!---->
+      <!---->
+      <!---->
+      <!-- Intro-->
+      <!---->
+      <!---->
+      <!---->
+      <section class="slide-center fullscreen bg-blue slide current">
+        <span class="background dark" style="background-image:url('./static/my-images/dockbernetes.jpg"></span>
+        <div class="wrap content-center">
+          <h3>
+            <strong>Despliegue de Wordpress con Docker-Compose y Kubernetes</strong>
+          </h3>
+          <p class="text-intro"><strong>
+              Raúl Heredia<br />
+              ASIX 2 Curs 2020-21
+          </p>
+          </strong>
         </div>
         <!-- .end .wrap -->
       </section>
-      <section>
+      <!---->
+      <!---->
+      <!---->
+      <!-- Índice-->
+      <!---->
+      <!---->
+      <!---->
+      <section class="slide-top">
+        <div class=" wrap size-50">
+          <h3>Índice</h3>
+          <hr>
+          <div class="toc">
+            <ol>
+              <li>
+                <a href="./index.html#slide=3" title="Tecnologías Usadas">
+                  <span class="chapter">Tecnologías Usadas</span>
+                  <span class="toc-page">03</span>
+                </a>
+              </li>
+              <li><a href="./index.html#slide=4" title="Docker Compose">
+                  <span class="chapter">¿Qué es Docker-Compose?</span>
+                  <span class="toc-page">04</span></a>
+              </li>
+              <li>
+                <a href="#" title="Go to What is Beauty?"><span class="chapter">What is Beauty?</span>
+                  <span class="toc-page">08</span></a>
+                <ol>
+                  <li><a href="#" title="Go to Harmony"><span class="chapter">Harmony</span>
+                      <span class="toc-page">12</span></a>
+                  </li>
+                  <li><a href="#" title="Go to Simplicity vs. Clarity"><span class="chapter">Simplicity vs.
+                        Clarity</span>
+                      <span class="toc-page">14</span></a>
+                  </li>
+                </ol>
+              </li>
+              <li>
+                <a href="#" title="Go to Building a Culture"><span class="chapter">Building a Culture</span>
+                  <span class="toc-page">16</span></a>
+                <ol>
+                  <li>
+                    <span class="chapter">Purpose</span>
+                    <span class="toc-page">17</span>
+                    <ol>
+                      <li>
+                        <span class="chapter">Valuable</span>
+                        <span class="toc-page">18</span>
+                        <ol>
+                          <li><span class="chapter">Easy</span>
+                            <span class="toc-page">20</span>
+                          </li>
+                          <li><span class="chapter">Elegant</span>
+                            <span class="toc-page">21</span>
+                          </li>
+                        </ol>
+                      </li>
+                    </ol>
+                  </li>
+                  <li><span class="chapter">Principles</span>
+                    <span class="toc-page">24</span>
+                  </li>
+                </ol>
+              </li>
+              <li><span class="chapter">Epilogue</span>
+                <span class="toc-page">40</span>
+              </li>
+            </ol>
+          </div>
+          <!-- end .toc -->
+        </div>
+      </section>
+      <!---->
+      <!---->
+      <!---->
+      <!-- Tecnologias usadas-->
+      <!---->
+      <!---->
+      <!---->
+      <section class="slide-top">
+        <div class="wrap">
+          <div class="content-left">
+            <h3>
+              <strong>Tecnoligías Usadas</strong>
+            </h3>
+          </div>
+        </div>
         <ul class="flexblock clients">
           <li>
-            <a href="#" title="Client">
+            <a href="https://www.docker.com/" target="_blank" title="Client">
               <figure>
                 <img class="blacklogo" src="./static/my-images/docker.svg" alt=" Docker">
                 <figcaption>
                   <h3>Docker</h3>
-                  <p>Collaboration with the Acme team to design their mobile apps. <code>img.blacklogo</code></p>
+                  <p>Docker es una plataforma de software que le permite crear, probar e implementar aplicaciones
+                    rápidamente mediante el uso de contenedores virtuales.</p>
                 </figcaption>
               </figure>
             </a>
           </li>
           <li>
-            <a href="#" title="Client">
+            <a href="https://kubernetes.io/es/" target="_blank" title="Client">
               <figure>
-                <center><img class="blacklogo" src="./static/my-images/kubernetes.svg" alt="Kubernetes">
-                </center>
+                <img class="blacklogo" src="./static/my-images/kubernetes.svg" alt="Kubernetes">
                 <figcaption>
                   <h3>Kubernetes</h3>
-                  <p>Collaboration with the Acme team to design their mobile apps. <code>img.blacklogo</code></p>
+                  <p>És una plataforma Open Source que automatiza las operaciones de los contenedores. Elimina
+                    muchos de los procesos manuales involucrados en la implementación y escalabilidad de las
+                    aplicaciones en contenedores.</p>
                 </figcaption>
               </figure>
             </a>
           </li>
           <li>
-            <a href="#" title="Client">
+            <a href="https://www.digitalocean.com/" target="_blank" title="Client">
               <figure>
                 <img class="blacklogo" src="./static/my-images/digitalocean.svg" alt="DigitalOcean">
                 <figcaption>
                   <h3>DigitalOcean</h3>
-                  <p>Collaboration with the Acme team to design their mobile apps. <code>img.blacklogo</code></p>
+                  <p>DigitalOcean es un proveedor estadounidense de Servidores Virtuales Privados, cuenta con servidores
+                    en Nueva York, Frankfurt, Madrid, etc.
+                    Frankfurt, etc.</p>
                 </figcaption>
               </figure>
             </a>
           </li>
         </ul>
       </section>
-      <section class="bg-gray">
+      <!---->
+      <!---->
+      <!---->
+      <!-- Que es Docker Compose-->
+      <!---->
+      <!---->
+      <!---->
+      <section class="slide-top">
         <div class="wrap">
           <div class="grid vertical-align">
             <div class="column">
-              <h3><strong>Docker-Compose</strong></h3>
-              <p class="text-intro">
-                Texto
-              </p>
+              <h3><strong>¿Qué es Docker-Compose?</strong></h3>
               <p>
-                Mas texto
+                Docker Compose es una herramienta que permite simplificar el uso de Docker. En vez de utilizar Docker
+                via una serie inmemorizable de comandos de bash y scripts, Docker Compose permite mediante archivos YAML
+                poder instruir al Docker Engine a realizar tareas,programaticamente.
               </p>
             </div>
             <!-- .end .column -->
@@ -160,7 +260,7 @@
 <span class="first-yaml">version:</span><span class="second-yaml">'3.7'</span> 
 <span class="first-yaml">services:</span>
   <span class="first-yaml">web:</span>
-    <span class="first-yaml">container_name:</span><span class="second-yaml">"nginx_volume_compose"</span> 
+    <span class="first-yaml">container_name:</span><span class="second-yaml">"nginx_volume_compose"</span>
     <span class="first-yaml">image:</span><span class="second-yaml">nginx:alpine</span>
     <span class="first-yaml">volumes:</span>
       <span class="second-yaml">- ./content:/usr/share/nginx/html</span>
