@@ -18,16 +18,13 @@
 
   <!-- SEO -->
   <title>WebSlides: Making HTML presentations easy</title>
-  <meta name="description"
-    content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features." />
+  <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features." />
 
   <!-- URL CANONICAL -->
   <!-- <link rel="canonical" href="http://your-url.com/"> -->
 
   <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext"
-    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,700,700i%7CMaitree:200,300,400,600,700&amp;subset=latin-ext" rel="stylesheet" />
 
   <!-- CSS WebSlides -->
   <link rel="stylesheet" type="text/css" media="all" href="static/css/webslides.css" />
@@ -44,8 +41,7 @@
   <meta property="og:type" content="article" />
   <meta property="og:title" content="WebSlides — Making HTML Presentations Easy" />
   <!-- EDIT -->
-  <meta property="og:description"
-    content="WebSlides is about telling stories beautifully. Just the essential features. Good karma." />
+  <meta property="og:description" content="WebSlides is about telling stories beautifully. Just the essential features. Good karma." />
   <!-- EDIT -->
   <meta property="og:updated_time" content="2017-01-04T17:20:50" />
   <!-- EDIT -->
@@ -60,8 +56,7 @@
   <!-- EDIT -->
   <meta name="twitter:title" content="WebSlides — Making HTML Presentations Easy" />
   <!-- EDIT -->
-  <meta name="twitter:description"
-    content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use." />
+  <meta name="twitter:description" content="WebSlides is about good karma. Just essential features. 120+ free slides ready to use." />
   <!-- EDIT -->
   <meta name="twitter:image" content="static/images/share-webslides.jpg" />
   <!-- EDIT -->
@@ -101,11 +96,13 @@
           <h3>
             <strong>Despliegue de Wordpress con Docker-Compose y Kubernetes</strong>
           </h3>
-          <p class="text-intro"><strong>
+          <p class="text-intro">
+            <strong>
               Raúl Heredia<br />
               ASIX 2 Curs 2020-21
+            </strong>
           </p>
-          </strong>
+
         </div>
         <!-- .end .wrap -->
       </section>
@@ -128,20 +125,20 @@
                   <span class="toc-page">03</span>
                 </a>
               </li>
-              <li><a href="./index.html#slide=4" title="Docker Compose">
-                  <span class="chapter">¿Qué es Docker-Compose?</span>
-                  <span class="toc-page">04</span></a>
-              </li>
               <li>
-                <a href="#" title="Go to What is Beauty?"><span class="chapter">What is Beauty?</span>
-                  <span class="toc-page">08</span></a>
+                <a href="./index.html#slide=4" title="Docker"><span class="chapter">Docker</span>
+                  <span class="toc-page">04</span></a>
                 <ol>
-                  <li><a href="#" title="Go to Harmony"><span class="chapter">Harmony</span>
-                      <span class="toc-page">12</span></a>
+                  <li><a href="./index.html#slide=5" title="Contenedores VS VM"><span class="chapter">Contenedores VS VM</span>
+                      <span class="toc-page">05</span></a>
                   </li>
-                  <li><a href="#" title="Go to Simplicity vs. Clarity"><span class="chapter">Simplicity vs.
-                        Clarity</span>
-                      <span class="toc-page">14</span></a>
+                  <li><a href="./index.html#slide=6" title="Docker Compose">
+                      <span class="chapter">¿Qué es Docker-Compose?</span>
+                      <span class="toc-page">06</span></a>
+                  </li>
+                  <li><a href="./index.html#slide=7" title="Wordpress Docker Compose">
+                      <span class="chapter">Desplegando Wordpress con Docker Compose</span>
+                      <span class="toc-page">07</span></a>
                   </li>
                 </ol>
               </li>
@@ -239,16 +236,48 @@
       <!---->
       <!---->
       <!---->
+      <!-- Docker -->
+      <!---->
+      <!---->
+      <!---->
+      <section class="slide-center">
+        <div class="wrap content-center">
+          <img src="static/my-images/docker.svg">
+        </div>
+      </section>
+      <!---->
+      <!---->
+      <!---->
+      <!-- Docker -->
+      <!---->
+      <!---->
+      <!---->
+      <section>
+        <div class="wrap">
+          <img class="alignright size-50" src="./static/my-images/containervsvm.png" alt="Diferencia">
+          <h3><strong>Contenedores vs VM</strong></h3>
+          <p>Las máquinas virtuales se ejecutan en un entorno de Hyper-V en el que cada máquina virtual debe incluir su
+            propio sistema operativo invitado dentro, junto con sus archivos binarios, bibliotecas y aplicaciones
+            relacionadas.</p>
+          <p>En cambio, cada contenedor comparte el mismo SO host o kernel y tiene un tamaño mucho más
+            ligero, a menudo sólo megabytes. En consecuencia, un contenedor puede tardar sólo segundos en
+            iniciar</p>
+        </div>
+        <!-- .end .wrap -->
+      </section>
+      <!---->
+      <!---->
+      <!---->
       <!-- Que es Docker Compose-->
       <!---->
       <!---->
       <!---->
       <section class="slide-top">
-        <div class="wrap">
-          <div class="grid vertical-align">
+        <div class="wrap vertical-align">
+          <div class="grid">
             <div class="column">
               <h3><strong>¿Qué es Docker-Compose?</strong></h3>
-              <p>
+              <p class="justify">
                 Docker Compose es una herramienta que permite simplificar el uso de Docker. En vez de utilizar Docker
                 via una serie inmemorizable de comandos de bash y scripts, Docker Compose permite mediante archivos YAML
                 poder instruir al Docker Engine a realizar tareas,programaticamente.
@@ -256,7 +285,25 @@
             </div>
             <!-- .end .column -->
             <div class="column">
-              <pre>
+              <h3><strong>Comandos Básicos:</strong></h3>
+              <pre><span>$ docker-compose up -d</span> 
+<span>$ docker-compose stop</span> 
+<span>$ docker-compose start</span> 
+<span>$ docker-compose restart</span> 
+<span>$ docker-compose rm</span></pre>
+            </div>
+            <!-- .end .column -->
+          </div>
+          <!-- .end .grid -->
+        </div>
+        <!-- .end .wrap -->
+      </section>
+      <section class="slide-top">
+        <div class="wrap">
+          <div class="grid content-center"></div>
+          <h3><strong>Ejemplo de Docker-Compose</strong></h3>
+          <pre>
+
 <span class="first-yaml">version:</span><span class="second-yaml">'3.7'</span> 
 <span class="first-yaml">services:</span>
   <span class="first-yaml">web:</span>
@@ -266,13 +313,50 @@
       <span class="second-yaml">- ./content:/usr/share/nginx/html</span>
     <span class="first-yaml">restart:</span><span class="second-yaml">unless-stopped</span>
 </pre>
-            </div>
-            <!-- .end .column -->
-          </div>
-          <!-- .end .grid -->
         </div>
-        <!-- .end .wrap -->
       </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h3><strong>Desplegando Wordpress Con Docker Compose</strong></h3>
+          <p class="text-intro"><strong>Requisitos</strong></p>
+          <ul class="flexblock clients">
+            <li>
+              <a href="https://kubernetes.io/es/" target="_blank" title="Client">
+                <figure>
+                  <img src="./static/my-images/mysql.svg" alt="MySQL">
+                  <figcaption>
+                    <h3>MySQL</h3>
+                    <p>Necesitaremos un contenedor de MySQL para almacenar los datos de nuestro Wordpress.</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.docker.com/" target="_blank" title="Client">
+                <figure>
+                  <img src="./static/my-images/wordpress.svg" alt=" Worpdress">
+                  <figcaption>
+                    <h3>Worpdress</h3>
+                    <p>Necesitaremos un contenedor de Wordpress, el cual dependerá del contenedor de MySQL.</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+            <li>
+              <a href="https://www.digitalocean.com/" target="_blank" title="Client">
+                <figure>
+                  <img src="./static/my-images/phpMyAdmin.svg" alt="phpMyAdmin">
+                  <figcaption>
+                    <h3>phpMyAdmin</h3>
+                    <p>Opcionalmente, podemos crear un contenedor de phpMyAdmin para poder gestionar nuestra base de datos.</p>
+                  </figcaption>
+                </figure>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </section>
+
       <section>
         <div class="wrap">
           <h2>Features</h2>

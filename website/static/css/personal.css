@@ -15,9 +15,8 @@ ul li a figure figcaption p{
     text-align: justify;
 }
 
-#section-4  div  div  p{
+.justify{
     text-align: justify;
-    margin-bottom: 20px;
 }
 hr{
     margin-top: 10px;
