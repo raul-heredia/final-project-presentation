@@ -24,3 +24,10 @@ hr{
 .toc{
     margin-top: -22px;
 }
+.title{
+    margin-top: -50px;
+}
+.compose-example{
+    width: 50%;
+    margin: 0 auto;
+}

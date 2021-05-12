@@ -115,7 +115,7 @@
       <!---->
       <section class="slide-top">
         <div class=" wrap size-50">
-          <h3>Índice</h3>
+          <h3 class="title">Índice</h3>
           <hr>
           <div class="toc">
             <ol>
@@ -187,7 +187,7 @@
       <section class="slide-top">
         <div class="wrap">
           <div class="content-left">
-            <h3>
+            <h3 class="title">
               <strong>Tecnoligías Usadas</strong>
             </h3>
           </div>
@@ -252,14 +252,14 @@
       <!---->
       <!---->
       <!---->
-      <section>
-        <div class="wrap">
+      <section class="slide-top">
+        <div class="wrap vertical-align">
           <img class="alignright size-50" src="./static/my-images/containervsvm.png" alt="Diferencia">
-          <h3><strong>Contenedores vs VM</strong></h3>
-          <p>Las máquinas virtuales se ejecutan en un entorno de Hyper-V en el que cada máquina virtual debe incluir su
+          <h3 class="title"><strong>Contenedores vs VM</strong></h3>
+          <p class="justify">Las máquinas virtuales se ejecutan en un entorno de Hyper-V en el que cada máquina virtual debe incluir su
             propio sistema operativo invitado dentro, junto con sus archivos binarios, bibliotecas y aplicaciones
             relacionadas.</p>
-          <p>En cambio, cada contenedor comparte el mismo SO host o kernel y tiene un tamaño mucho más
+          <p class="justify">En cambio, cada contenedor comparte el mismo SO host o kernel y tiene un tamaño mucho más
             ligero, a menudo sólo megabytes. En consecuencia, un contenedor puede tardar sólo segundos en
             iniciar</p>
         </div>
@@ -276,7 +276,7 @@
         <div class="wrap vertical-align">
           <div class="grid">
             <div class="column">
-              <h3><strong>¿Qué es Docker-Compose?</strong></h3>
+              <h3 class="title"><strong>¿Qué es Docker-Compose?</strong></h3>
               <p class="justify">
                 Docker Compose es una herramienta que permite simplificar el uso de Docker. En vez de utilizar Docker
                 via una serie inmemorizable de comandos de bash y scripts, Docker Compose permite mediante archivos YAML
@@ -285,7 +285,7 @@
             </div>
             <!-- .end .column -->
             <div class="column">
-              <h3><strong>Comandos Básicos:</strong></h3>
+              <h3 class="title"><strong>Comandos Básicos:</strong></h3>
               <pre><span>$ docker-compose up -d</span> 
 <span>$ docker-compose stop</span> 
 <span>$ docker-compose start</span> 
@@ -300,12 +300,8 @@
       </section>
       <section class="slide-top">
         <div class="wrap">
-          <div class="grid">
-            <div class="column">
-              <h3><strong>Ejemplo de Docker-Compose</strong></h3>
-
-
-              <pre>
+          <h3 class="title"><strong>Ejemplo de Docker-Compose</strong></h3>
+          <pre class="compose-example">
 <span class="first-yaml">version:</span><span class="second-yaml">'3.7'</span> 
 <span class="first-yaml">services:</span>
   <span class="first-yaml">web:</span>
@@ -315,15 +311,11 @@
       <span class="second-yaml">- ./content:/usr/share/nginx/html</span>
     <span class="first-yaml">restart:</span><span class="second-yaml">unless-stopped</span>
 </pre>
-            </div>
-            <div class="column">
-
-            </div>
-          </div>
+        </div>
       </section>
       <section class="slide-top">
         <div class="wrap vertical-align">
-          <h3><strong>Desplegando Wordpress Con Docker Compose</strong></h3>
+          <h3 class="title"><strong>Desplegando Wordpress Con Docker Compose</strong></h3>
           <p class="text-intro"><strong>Requisitos</strong></p>
           <ul class="flexblock clients">
             <li>
