@@ -3,10 +3,10 @@
     font-size: 16px;
 }
 .first-yaml{
-    color: red;
+    color: #d32f2f;
 }
 .second-yaml{
-    color: #00a800;
+    color: #388e3c;
 }
 .comment-yaml{
     color: #3d3d3d;
@@ -25,10 +25,92 @@ hr{
     margin-top: -22px;
 }
 .title{
-    margin-top: -50px;
+    margin-top: -30px;
     margin-bottom: 20px;
 }
 .compose-example{
-    width: 50%;
+    width: auto;
     margin: 0 auto;
 }
+.gist-data{
+    height:450px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+
+  @import url('https://fonts.googleapis.com/css?family=Droid+Sans+Mono');
+
+  body .gist .gist-file {
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+  
+  body .gist .gist-data {
+    border-bottom: none;
+    border-radius: 0;
+    background-color: #f1f3f5;
+  }
+  
+  body .gist .blob-wrapper {
+    border-radius: 0;
+  }
+  
+  body .gist .highlight {
+    background-color: transparent;
+    font-family: 'Droid Sans Mono', monospace;
+    font-size: 14px;
+  }
+  
+  body .gist .highlight td {
+    padding: 5px 15px !important;
+    line-height: 1;
+    font-family: inherit;
+    font-size: inherit;
+    border: none;
+  }  
+  body .gist .blob-num {
+    color: #ced4da;
+    background-color: #495057;
+    pointer-events: none;
+  }
+  
+  body .gist .gist-meta {
+    display: none;
+  }
+  .gist .pl-ent{
+    color: #d32f2f !important;
+    font-weight: 800; 
+  }
+  .gist .pl-s,.pl-pds{
+    color: #388e3c !important; 
+    font-weight: 800;  
+  }
+  .terminal{
+      background-color: black;
+      border-radius: 0.2em;
+      color: white;
+  }
+  .user{
+      color: #03fc17;
+  }
+  .folder{
+      color: #3464f7;
+  }

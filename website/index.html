@@ -17,7 +17,7 @@
     -->
 
   <!-- SEO -->
-  <title>WebSlides: Making HTML presentations easy</title>
+  <title>Raúl Heredia Presentation</title>
   <meta name="description" content="WebSlides is the easiest way to make HTML presentations, portfolios, and landings. Just essential features." />
 
   <!-- URL CANONICAL -->
@@ -137,42 +137,52 @@
                       <span class="toc-page">06</span></a>
                   </li>
                   <li><a href="./index.html#slide=7" title="Wordpress Docker Compose">
-                      <span class="chapter">Desplegando Wordpress con Docker Compose</span>
+                      <span class="chapter">Ejemplo de Docker Compose</span>
                       <span class="toc-page">07</span></a>
                   </li>
-                </ol>
-              </li>
-              <li>
-                <a href="#" title="Go to Building a Culture"><span class="chapter">Building a Culture</span>
-                  <span class="toc-page">16</span></a>
-                <ol>
                   <li>
-                    <span class="chapter">Purpose</span>
-                    <span class="toc-page">17</span>
+                    <a href="./index.html#slide=8" title="Docker"><span class="chapter">Desplegando Wordpress con Docker-Compose</span>
+                      <span class="toc-page">08</span></a>
                     <ol>
-                      <li>
-                        <span class="chapter">Valuable</span>
-                        <span class="toc-page">18</span>
-                        <ol>
-                          <li><span class="chapter">Easy</span>
-                            <span class="toc-page">20</span>
-                          </li>
-                          <li><span class="chapter">Elegant</span>
-                            <span class="toc-page">21</span>
-                          </li>
-                        </ol>
+                      <li><a href="./index.html#slide=8" title="Contenedores VS VM"><span class="chapter">Requisitos</span>
+                          <span class="toc-page">08</span></a>
+                      </li>
+                      <li><a href="./index.html#slide=9" title="Contenedores VS VM"><span class="chapter">Archivo Docker-Compose</span>
+                          <span class="toc-page">09</span></a>
                       </li>
                     </ol>
                   </li>
-                  <li><span class="chapter">Principles</span>
-                    <span class="toc-page">24</span>
+                  <li>
+                    <a href="#" title="Go to Building a Culture"><span class="chapter">Building a Culture</span>
+                      <span class="toc-page">16</span></a>
+                    <ol>
+                      <li>
+                        <span class="chapter">Purpose</span>
+                        <span class="toc-page">17</span>
+                        <ol>
+                          <li>
+                            <span class="chapter">Valuable</span>
+                            <span class="toc-page">18</span>
+                            <ol>
+                              <li><span class="chapter">Easy</span>
+                                <span class="toc-page">20</span>
+                              </li>
+                              <li><span class="chapter">Elegant</span>
+                                <span class="toc-page">21</span>
+                              </li>
+                            </ol>
+                          </li>
+                        </ol>
+                      </li>
+                      <li><span class="chapter">Principles</span>
+                        <span class="toc-page">24</span>
+                      </li>
+                    </ol>
+                  </li>
+                  <li><span class="chapter">Epilogue</span>
+                    <span class="toc-page">40</span>
                   </li>
                 </ol>
-              </li>
-              <li><span class="chapter">Epilogue</span>
-                <span class="toc-page">40</span>
-              </li>
-            </ol>
           </div>
           <!-- end .toc -->
         </div>
@@ -199,7 +209,7 @@
                 <img class="blacklogo" src="./static/my-images/docker.svg" alt=" Docker">
                 <figcaption>
                   <h3>Docker</h3>
-                  <p>Docker es una plataforma de software que le permite crear, probar e implementar aplicaciones
+                  <p>Docker es una plataforma que permite crear, probar e implementar aplicaciones
                     rápidamente mediante el uso de contenedores virtuales.</p>
                 </figcaption>
               </figure>
@@ -211,9 +221,7 @@
                 <img class="blacklogo" src="./static/my-images/kubernetes.svg" alt="Kubernetes">
                 <figcaption>
                   <h3>Kubernetes</h3>
-                  <p>És una plataforma Open Source que automatiza las operaciones de los contenedores. Elimina
-                    muchos de los procesos manuales involucrados en la implementación y escalabilidad de las
-                    aplicaciones en contenedores.</p>
+                  <p>Es una plataforma open source diseñada para automatizar las operaciones con contenedores, ejecutar aplicaciones y servicios distribuidos a escala.</p>
                 </figcaption>
               </figure>
             </a>
@@ -224,6 +232,19 @@
                 <img class="blacklogo" src="./static/my-images/digitalocean.svg" alt="DigitalOcean">
                 <figcaption>
                   <h3>DigitalOcean</h3>
+                  <p>DigitalOcean es un proveedor estadounidense de Servidores Virtuales Privados, cuenta con servidores
+                    en Nueva York, Frankfurt, Madrid, etc.
+                    Frankfurt, etc.</p>
+                </figcaption>
+              </figure>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.digitalocean.com/" target="_blank" title="Client">
+              <figure>
+                <img class="blacklogo" src="./static/my-images/rancher.svg" alt="RancherOS">
+                <figcaption>
+                  <h3>RancherOS</h3>
                   <p>DigitalOcean es un proveedor estadounidense de Servidores Virtuales Privados, cuenta con servidores
                     en Nueva York, Frankfurt, Madrid, etc.
                     Frankfurt, etc.</p>
@@ -352,6 +373,54 @@
               </a>
             </li>
           </ul>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h3 class="title"><strong>Archivo Docker Compose</strong></h3>
+          <script src="https://gist.github.com/raul-heredia/7020b4772a42f05e236619cbe47be471.js"></script>
+        </div>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h3 class="title"><strong>Desplegando Wordpress</strong></h3>
+          <pre class="terminal compose-example"><span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$ docker-compose up -d
+<span>Pulling db (mysql:5,7)...</span>
+<span>5.7: Pulling from library/mysql</span>
+<span>< ... ></span>
+<span>Status: Downloaded newer image for mysql:5.7</span>
+<span>Pulling phpmyadmin (phpmyadmin/phpmyadmin)...</span>
+<span>latest: Pulling from phpmyadmin/phpmyadmin</span>
+<span>< ... ></span>
+<span>Status: Downloaded newer image for phpmyadmin/phpmyadmin:latest</span>
+<span>Pulling wordpress (wordpress:latest)...</span>
+<span>latest: Pulling from wordpress:latest</span>
+<span>< ... ></span>
+<span>Status: Downloaded newer image for wordpress:latest</span>
+<span>Creating wordpress_db_1 ... </span> <span class="user">done</span>
+<span>Creating wordpress_wordpress_1 ... </span> <span class="user">done</span>
+<span>Creating wordpress_phpmyadmin_1 ... </span> <span class="user">done</span>
+<span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$
+</pre>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h3 class="title"><strong>Comprovación de Funcionamiento</strong></h3>
+          <pre class="terminal compose-example"><span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$ docker ps
+<span>CONTAINER ID  IMAGE                   COMMAND                   CREATED         STATUS          PORTS                   NAMES</span>
+<span>9252f84dc73c  phpmyadmin/phpmyadmin   "/docker-entrypoint..."   5 minutes ago   Up 5 minutes    0.0.0.0:8080->80/tcp    wordpress_phpmyadmin_1</span>
+<span>7883d9e77e82  wordpress:latest        "/docker-entrypoint..."   5 minutes ago   Up 5 minutes    0.0.0.0:8000->80/tcp    wordpress_wordpress_1</span>
+<span>dab6e9f28df3  mysql:5.7               "/docker-entrypoint..."   5 minutes ago   Up 5 minutes    3306/tcp,  33060/tcp    wordpress_db_1</span>
+<span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$
+</pre>
+          <p>Para acceder lo hacemos mediante la dirección IP y el puerto, en este caso el 8000 para Wordpress y el 8080 para phpmyadmin</p>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+
         </div>
       </section>
 
