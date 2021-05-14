@@ -24,6 +24,9 @@ hr{
 .toc{
     margin-top: -22px;
 }
+#indice{
+    margin-top: -50px
+}
 .title{
     margin-top: -30px;
     margin-bottom: 20px;
@@ -32,6 +35,7 @@ hr{
     width: auto;
     margin: 0 auto;
 }
+/*---------------------------------*/
 .gist-data{
     height:450px;
 }
