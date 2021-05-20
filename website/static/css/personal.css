@@ -32,12 +32,12 @@ hr{
     margin-bottom: 20px;
 }
 .compose-example{
-    width: auto;
+    width: 500px;
     margin: 0 auto;
 }
 /*---------------------------------*/
 .gist-data{
-    height:450px;
+    height:600px;
 }
 
 /* width */
@@ -108,6 +108,8 @@ hr{
     font-weight: 800;  
   }
   .terminal{
+      width: auto;
+      margin: 0 auto;
       background-color: black;
       border-radius: 0.2em;
       color: white;

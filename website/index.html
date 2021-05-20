@@ -126,12 +126,15 @@
                 </a>
               </li>
               <li>
-                <a href="./index.html#slide=4" title="Docker"><span class="chapter">Docker</span>
-                  <span class="toc-page">04</span></a>
+                <a href="./index.html#slide=4" title="Tecnologías Usadas">
+                  <span class="chapter">Diferencias Contenedores y VM</span>
+                  <span class="toc-page">04</span>
+                </a>
+              </li>
+              <li>
+                <a href="./index.html#slide=5" title="Docker"><span class="chapter">Docker</span>
+                  <span class="toc-page">05</span></a>
                 <ol>
-                  <li><a href="./index.html#slide=5" title="Contenedores VS VM"><span class="chapter">Contenedores VS VM</span>
-                      <span class="toc-page">05</span></a>
-                  </li>
                   <li><a href="./index.html#slide=6" title="Docker Compose">
                       <span class="chapter">¿Qué es Docker-Compose?</span>
                       <span class="toc-page">06</span></a>
@@ -165,6 +168,32 @@
                   <span class="chapter">Kubernetes</span>
                   <span class="toc-page">13</span>
                 </a>
+                <ol>
+                  <li><a href="./index.html#slide=14" title="Requisitos"><span class="chapter">Estructura de Kubernetes</span>
+                      <span class="toc-page">14</span></a>
+                  </li>
+                  <li><a href="./index.html#slide=15" title="Requisitos"><span class="chapter">Desplegando Wordpress con Kubernetes</span>
+                      <span class="toc-page">15</span></a>
+                    <ol>
+                      <li><a href="./index.html#slide=16" title="Requisitos"><span class="chapter">Archivos necesarios para desplegar Wordpress en Kubernetes
+                          </span>
+                          <span class="toc-page">16</span></a>
+                      </li>
+                      <li><a href="./index.html#slide=17" title="Requisitos"><span class="chapter">Archivo kustomization.yaml</span>
+                          <span class="toc-page">17</span></a>
+                      </li>
+                      <li><a href="./index.html#slide=18" title="Requisitos"><span class="chapter">Archivo mysql-deployment.yaml</span>
+                          <span class="toc-page">18</span></a>
+                      </li>
+                      <li><a href="./index.html#slide=19" title="Requisitos"><span class="chapter">Archivo wordpress-deployment.yaml</span>
+                          <span class="toc-page">19</span></a>
+                      </li>
+                      <li><a href="./index.html#slide=20" title="Requisitos"><span class="chapter">Despliegue y Comprobación de Funcionamiento</span>
+                          <span class="toc-page">20</span></a>
+                      </li>
+                    </ol>
+                  </li>
+                </ol>
               </li>
             </ol>
 
@@ -224,20 +253,26 @@
               </figure>
             </a>
           </li>
-          <li>
-            <a href="https://rancher.com/" target="_blank" title="Client">
-              <figure>
-                <img class="blacklogo" src="./static/my-images/rancher.svg" alt="RancherOS">
-                <figcaption>
-                  <h3>RancherOS</h3>
-                  <p>DigitalOcean es un proveedor estadounidense de Servidores Virtuales Privados, cuenta con servidores
-                    en Nueva York, Frankfurt, Madrid, etc.
-                    Frankfurt, etc.</p>
-                </figcaption>
-              </figure>
-            </a>
-          </li>
         </ul>
+      </section>
+      <!---->
+      <!---->
+      <!---->
+      <!-- Diferencias Contenedores y VM -->
+      <!---->
+      <!---->
+      <!---->
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <img class="alignright size-50" src="./static/my-images/containervsvm.png" alt="Diferencia">
+          <h4 class="title"><strong>Diferencias Contenedores y VM</strong></h3>
+            <p class="justify">Las máquinas virtuales se ejecutan en un entorno de Hyper-V en el que cada máquina virtual debe incluir su
+              propio sistema operativo invitado dentro, junto con sus archivos binarios, bibliotecas y aplicaciones
+              relacionadas.</p>
+            <p class="justify">En cambio, cada contenedor comparte el mismo SO host o kernel y tiene un tamaño mucho más
+              ligero, a menudo sólo megabytes. En consecuencia, un contenedor puede tardar sólo segundos en
+              iniciar</p>
+        </div>
       </section>
       <!---->
       <!---->
@@ -251,25 +286,7 @@
           <img src="static/my-images/docker.svg">
         </div>
       </section>
-      <!---->
-      <!---->
-      <!---->
-      <!-- Docker -->
-      <!---->
-      <!---->
-      <!---->
-      <section class="slide-top">
-        <div class="wrap vertical-align">
-          <img class="alignright size-50" src="./static/my-images/containervsvm.png" alt="Diferencia">
-          <h4 class="title"><strong>Contenedores vs VM</strong></h3>
-            <p class="justify">Las máquinas virtuales se ejecutan en un entorno de Hyper-V en el que cada máquina virtual debe incluir su
-              propio sistema operativo invitado dentro, junto con sus archivos binarios, bibliotecas y aplicaciones
-              relacionadas.</p>
-            <p class="justify">En cambio, cada contenedor comparte el mismo SO host o kernel y tiene un tamaño mucho más
-              ligero, a menudo sólo megabytes. En consecuencia, un contenedor puede tardar sólo segundos en
-              iniciar</p>
-        </div>
-      </section>
+
       <!---->
       <!---->
       <!---->
@@ -313,7 +330,7 @@
 <span class="first-yaml">version:</span><span class="second-yaml">'3.7'</span> 
 <span class="first-yaml">services:</span>
   <span class="first-yaml">web:</span>
-    <span class="first-yaml">container_name:</span><span class="second-yaml">"nginx_volume_compose"</span>
+    <span class="first-yaml">container_name:</span><span class="second-yaml">"nginx_compose"</span>
     <span class="first-yaml">image:</span><span class="second-yaml">nginx:alpine</span>
     <span class="first-yaml">volumes:</span>
       <span class="second-yaml">- ./content:/usr/share/nginx/html</span>
@@ -409,7 +426,7 @@
       <section class="slide-top">
         <div class="wrap vertical-align">
           <h4 class="title"><strong>Desplegando Wordpress</strong></h3>
-            <pre class="terminal compose-example"><span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$ docker-compose up -d
+            <pre class="terminal"><span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$ docker-compose up -d
 <span>Pulling db (mysql:5.7)...</span>
 <span>5.7: Pulling from library/mysql</span>
 <span>< ... ></span>
@@ -438,17 +455,24 @@
       <!---->
       <section class="slide-top">
         <div class="wrap vertical-align">
-          <h4 class="title"><strong>Comprobación de Funcionamiento</strong></h3>
-            <pre class="terminal compose-example"><span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$ docker ps
+          <h4 class="title"><strong>Comprobación de Funcionamiento</strong></h4>
+          <pre class="terminal"><span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$ docker ps
 <span>CONTAINER ID  IMAGE                   COMMAND                   CREATED         STATUS          PORTS                   NAMES</span>
 <span>9252f84dc73c  phpmyadmin/phpmyadmin   "/docker-entrypoint..."   5 minutes ago   Up 5 minutes    0.0.0.0:8080->80/tcp    wordpress_phpmyadmin_1</span>
 <span>7883d9e77e82  wordpress:latest        "/docker-entrypoint..."   5 minutes ago   Up 5 minutes    0.0.0.0:8000->80/tcp    wordpress_wordpress_1</span>
 <span>dab6e9f28df3  mysql:5.7               "/docker-entrypoint..."   5 minutes ago   Up 5 minutes    3306/tcp,  33060/tcp    wordpress_db_1</span>
 <span class="user">raulh@server</span>:<span class="folder">~/docker/wordpress</span>$
 </pre>
-            <p>Para acceder lo hacemos mediante la dirección IP y el puerto, en este caso el 8000 para Wordpress y el 8080 para phpmyadmin. O configurando un reverse proxy que nos redirija a los distintos servicios según el dominio entrante.</p>
+          <p>Para acceder lo hacemos mediante la dirección IP y el puerto, en este caso el 8000 para Wordpress y el 8080 para phpmyadmin. O configurando un reverse proxy que nos redirija a los distintos servicios según el dominio entrante.</p>
         </div>
       </section>
+      <!---->
+      <!---->
+      <!---->
+      <!-- Kubernetes-->
+      <!---->
+      <!---->
+      <!---->
       <section class="slide-center">
         <div class="wrap content-center">
           <img src="static/my-images/kubernetes.svg">
@@ -456,6 +480,93 @@
       </section>
       <section class="slide-top">
         <div class="wrap vertical-align">
+          <h4 class="title"><strong>Estructura de Kubernetes</strong></h4>
+          <center><img src="static/my-images/kubestructure.png" width="600px"></center>
+        </div>
+      </section>
+      <section class="slide-center">
+        <div class="wrap content-center">
+          <h4 class="title"><strong>Desplegando Wordpress con Kubernetes</strong></h4>
+        </div>
+        <div class="wrap">
+          <center>
+            <img src="static/my-images/kubernetes.svg"><img src="static/my-images/wordpress.svg">
+          </center>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong>Archivos necesarios para desplegar Wordpress en Kubernetes</strong></h4>
+          <ul>
+            <li>kustomization.yaml - Archivo Secret donde guardaremos la contraseña de Mysql</li>
+            <li>mysql-deployment.yaml - Archivo que contendrá los parámetros para iniciar mysql</li>
+            <li>wordpress-deployment.yaml - Archivo que contendrá los parámetros para iniciar Wordpress</li>
+          </ul>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong>Archivo kustomization.yaml</strong></h4>
+          <pre class="compose-example"><span class="first-yaml">secretGenerator:</span> 
+  <span class="first-yaml">- name: </span><span class="second-yaml">mysql-pass</span>
+    <span class="first-yaml">literals:</span>
+    <span class="second-yaml">- password=&lt;YOUR_PASSWORD_HERE&gt;
+<span class="first-yaml">resources:</span>
+    <span class="second-yaml">- mysql-deployment.yaml</span>
+    <span class="second-yaml">- wordpress-deployment.yaml</span>
+            </pre>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong>Archivo mysql-deployment.yaml</strong></h4>
+          <script src="https://gist.github.com/raul-heredia/41758a26757c51d0ec510e25ad5c4c0b.js"></script>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong>Archivo wordpress-deployment.yaml</strong></h4>
+          <script src="https://gist.github.com/raul-heredia/509ff7a3e1fa6aeb6985919cedb41165.js"></script>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong>Despliegue y Comprobación de Funcionamiento</strong></h4>
+          <pre class="terminal"><span class="user">root@ubuntu-minikube</span>:<span class="folder">~/kube/wordpress</span># kubectl apply -k ./
+<span>secret/mysql-pass-99f42cmt75 created</span>
+<span>service/wordpress created</span>
+<span>service/wordpress-mysql created</span>
+<span>persistentvolumeclaim/mysql-pv-claim created</span>
+<span>persistentvolumeclaim/wp-pv-claim created</span>
+<span>deployment.apps/wordpress created</span>
+<span>deployment.apps/wordpress-mysql created</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~/kube/wordpress</span># kubectl get pods
+<span>NAME                            READY   STATUS   RESTARS  AGE</span>
+<span>wordpress-6dcc6778d5-cqvb4      1/1     Running  0        13s</span>
+<span>wordpress-mysql-cc87dc69-t88bd  1/1     Running  0        13s</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~/kube/wordpress</span># kubectl get svc
+<span>NAME              TYPE          CLUSTER-IP      EXTERNAL-IP     PORT(S)       AGE</span>
+<span>kubernetes        ClusterIP     10.96.0.1       &lt;none&gt;          443/TCP       21h</span>
+<span>Worpdress         LoadBalancer  10.109.151.200  &lt;pending&gt;       80:32327/TCP  16s</span>
+<span>wordpress-mysql   ClusterIP     None            &lt;none&gt;          3306/TCP      16s</span>
+</pre>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong></strong></h4>
+
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong></strong></h4>
+
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong></strong></h4>
 
         </div>
       </section>
