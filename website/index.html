@@ -172,24 +172,26 @@
                   <li><a href="./index.html#slide=14" title="Requisitos"><span class="chapter">Estructura de Kubernetes</span>
                       <span class="toc-page">14</span></a>
                   </li>
-                  <li><a href="./index.html#slide=15" title="Requisitos"><span class="chapter">Desplegando Wordpress con Kubernetes</span>
+                  <li><a href="./index.html#slide=15" title="Requisitos"><span class="chapter">Escalabilidad de Contenedores</span>
                       <span class="toc-page">15</span></a>
+                  </li>
+                  <li><a href="./index.html#slide=16" title="Requisitos"><span class="chapter">Auto Escalabilidad de Contenedores</span>
+                      <span class="toc-page">16</span></a>
+                  </li>
+                  <li><a href="./index.html#slide=17" title="Requisitos"><span class="chapter">Desplegando Wordpress con Kubernetes</span>
+                      <span class="toc-page">17</span></a>
                     <ol>
-                      <li><a href="./index.html#slide=16" title="Requisitos"><span class="chapter">Archivos necesarios para desplegar Wordpress en Kubernetes
-                          </span>
-                          <span class="toc-page">16</span></a>
-                      </li>
-                      <li><a href="./index.html#slide=17" title="Requisitos"><span class="chapter">Archivo kustomization.yaml</span>
-                          <span class="toc-page">17</span></a>
-                      </li>
-                      <li><a href="./index.html#slide=18" title="Requisitos"><span class="chapter">Archivo mysql-deployment.yaml</span>
+                      <li><a href="./index.html#slide=18" title="Requisitos"><span class="chapter">Archivo kustomization.yaml</span>
                           <span class="toc-page">18</span></a>
                       </li>
-                      <li><a href="./index.html#slide=19" title="Requisitos"><span class="chapter">Archivo wordpress-deployment.yaml</span>
+                      <li><a href="./index.html#slide=19" title="Requisitos"><span class="chapter">Archivo mysql-deployment.yaml</span>
                           <span class="toc-page">19</span></a>
                       </li>
-                      <li><a href="./index.html#slide=20" title="Requisitos"><span class="chapter">Despliegue y Comprobación de Funcionamiento</span>
+                      <li><a href="./index.html#slide=20" title="Requisitos"><span class="chapter">Archivo wordpress-deployment.yaml</span>
                           <span class="toc-page">20</span></a>
+                      </li>
+                      <li><a href="./index.html#slide=21" title="Requisitos"><span class="chapter">Despliegue y Comprobación de Funcionamiento</span>
+                          <span class="toc-page">21</span></a>
                       </li>
                     </ol>
                   </li>
@@ -335,6 +337,8 @@
     <span class="first-yaml">volumes:</span>
       <span class="second-yaml">- ./content:/usr/share/nginx/html</span>
     <span class="first-yaml">restart:</span><span class="second-yaml">unless-stopped</span>
+    <span class="first-yaml">ports:</span>
+      <span class="second-yaml">- "8888:80"</span>
 </pre>
         </div>
       </section>
@@ -484,6 +488,64 @@
           <center><img src="static/my-images/kubestructure.png" width="600px"></center>
         </div>
       </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong></strong></h4>
+          <h4 class="title"><strong>Escalabilidad de Contenedores</strong></h4>
+          <pre class="terminal"><span class="user">raulh@kubemaster</span>:<span class="folder">~</span>$ kubectl get pods
+<span>NAME                                  READY    STATUS    RESTARTS    AGE</span>
+<span>whoami-deployment-7548d6596b-svslr    1/1      Running   0           32s</span>
+<span>whoami-deployment-7548d6596b-wrz7k    1/1      Running   0           32s</span>
+<span>whoami-deployment-7548d6596b-7cg7m    1/1      Running   0           32s</span>
+<span>whoami-deployment-7548d6596b-t9th2    1/1      Running   0           32s</span>
+<span>whoami-deployment-7548d6596b-rdtzt    1/1      Running   0           32s</span>
+<span class="user">raulh@kubemaster</span>:<span class="folder">~</span>$ kubectl scale --replicas=8 deployment/whoami-deployment
+<span>NAME                                  READY    STATUS              RESTARTS    AGE</span>
+<span>whoami-deployment-7548d6596b-svslr    1/1      Running             0           3m19s</span>
+<span>whoami-deployment-7548d6596b-wrz7k    1/1      Running             0           3m19s</span>
+<span>whoami-deployment-7548d6596b-7cg7m    1/1      Running             0           3m19s</span>
+<span>whoami-deployment-7548d6596b-t9th2    1/1      Running             0           3m19s</span>
+<span>whoami-deployment-7548d6596b-rdtzt    1/1      Running             0           3m19s</span>
+<span>whoami-deployment-7548d6596b-xcr79    0/1      ContainerCreating   0           36s</span>
+<span>whoami-deployment-7548d6596b-6w5vb    0/1      ContainerCreating   0           36s</span>
+<span>whoami-deployment-7548d6596b-9mrsh    0/1      ContainerCreating   0           35s</span>
+<span class="user">raulh@kubemaster</span>:<span class="folder">~</span>$ kubectl scale --replicas=0 deployment/whoami-deployment
+<span>NAME                                  READY    STATUS              RESTARTS    AGE</span>
+<span>whoami-deployment-7548d6596b-svslr    1/1      Terminating         0           4m20s</span>
+<span>whoami-deployment-7548d6596b-wrz7k    1/1      Terminating         0           4m20s</span>
+</pre>
+        </div>
+      </section>
+      <section class="slide-top">
+        <div class="wrap vertical-align">
+          <h4 class="title"><strong>Auto Escalabilidad de Contenedores</strong></h4>
+          <pre class="terminal"><span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span># kubectl autoscale deployment php-apache --cpu-percent=50 --min=1 --max=10
+<span>horizontalpodautoscaler.autoscaling/php-apache autoscaled</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span># kubectl get hpa
+<span>NAME        REFERENCE               TARGETS   MINPODS   MAXPODS   REPLICAS  AGE</span>
+<span>php-apache  Deployment/php-apache   0%/50%    1         10        1         3m59s</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span>#
+<span></span>
+<span></span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span># kubectl get hpa
+<span>NAME        REFERENCE               TARGETS   MINPODS   MAXPODS   REPLICAS  AGE</span>
+<span>php-apache  Deployment/php-apache   250%/50%  1         10        5         6m45s</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span># kubectl get deployment php-apache
+<span>NAME        READY   UP-TO-DATE   AVAILABLE    AGE</span>
+<span>php-apache  5/5     5            5            7m15s</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span>#
+<span></span>
+<span></span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span># kubectl get hpa
+<span>NAME        REFERENCE               TARGETS   MINPODS   MAXPODS   REPLICAS  AGE</span>
+<span>php-apache  Deployment/php-apache   0%/50%    1         10        1         16m</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span># kubectl get deployment php-apache
+<span>NAME        READY   UP-TO-DATE   AVAILABLE    AGE</span>
+<span>php-apache  1/1     1            1            17m</span>
+<span class="user">root@ubuntu-minikube</span>:<span class="folder">~</span>#
+</pre>
+        </div>
+      </section>
       <section class="slide-center">
         <div class="wrap content-center">
           <h4 class="title"><strong>Desplegando Wordpress con Kubernetes</strong></h4>
@@ -492,16 +554,6 @@
           <center>
             <img src="static/my-images/kubernetes.svg"><img src="static/my-images/wordpress.svg">
           </center>
-        </div>
-      </section>
-      <section class="slide-top">
-        <div class="wrap vertical-align">
-          <h4 class="title"><strong>Archivos necesarios para desplegar Wordpress en Kubernetes</strong></h4>
-          <ul>
-            <li>kustomization.yaml - Archivo Secret donde guardaremos la contraseña de Mysql</li>
-            <li>mysql-deployment.yaml - Archivo que contendrá los parámetros para iniciar mysql</li>
-            <li>wordpress-deployment.yaml - Archivo que contendrá los parámetros para iniciar Wordpress</li>
-          </ul>
         </div>
       </section>
       <section class="slide-top">
